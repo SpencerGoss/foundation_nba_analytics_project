@@ -2,7 +2,6 @@
 
 This document tracks the development of my NBA analytics project.  
 It outlines each step taken, the reasoning behind key decisions, and the technical details behind the work.  
-I will continue updating this file as the project evolves.
 
 ---
 
