@@ -1,12 +1,26 @@
-# foundation_nba_analytics_project
+# NBA Data Pipeline (Oddsix foundation)
 
-This repository is a preserved clone of the original `nba_analytics_project`, created to maintain a stable baseline before introducing further changes to the main project. Having two separate repositories ensures that the original work remains intact and accessible as a reference point at any time.
+The starting point of [Oddsix](https://oddsix.app), my multi-sport data and prediction platform. This repository
+is preserved as it was in early 2026: a data pipeline written by hand, before the project grew into the full
+platform with AI-assisted development.
 
-This version reflects work completed before relying heavily on AI. Core pipelines, cleaning logic, and analysis were written by hand to demonstrate original structure and reasoning. AI was used only for light suggestions.
+## What it does
 
-## Purpose
+- Pulls game logs, player stats, team stats and a player master list from the NBA Stats API with Python
+- Cleans and standardizes the raw data (consistent IDs, seasons, column names and types)
+- Loads the cleaned data into a relational SQLite database (`database/nba.db`) for analysis
 
-- **Baseline reference**: Preserves the original state of the project so it can be compared against future iterations.
-- **Safe experimentation**: Changes can be made freely in the main `nba_analytics_project` repository without risk of losing the foundational work captured here.
-- **Version history**: Serves as a snapshot of the project at a specific point in development.
+## Structure
 
+| Path | What it is |
+|---|---|
+| `src/data/` | Scripts that pull each dataset from the NBA Stats API |
+| `src/processing/preprocessing_data.ipynb` | Cleaning and standardization |
+| `src/processing/load_to_sql.py` | Loads the processed data into the database |
+| `database/nba.db` | The resulting SQLite database |
+| `docs/project_overview.md` | Progress log: planning, architecture, ingestion, cleaning and the SQL layer |
+
+## Status
+
+Archived. Development continued in the private Oddsix codebase, which now covers five leagues with live updates,
+prediction models and a public website at [oddsix.app](https://oddsix.app).
